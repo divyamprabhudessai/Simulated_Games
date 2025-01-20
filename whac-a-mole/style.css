@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #982a2a);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.game-container {
+    background: #ffffff84;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.stat {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 1rem;
+    background: #8B4513;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background: #3e2723;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mole {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    transition: bottom 0.1s;
+    background-image: url('assets/mole.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.mole.active {
+    bottom: 0;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #388E3C;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.hole.bonk::after {
+    content: 'BONK!';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: bonk 0.5s ease-out;
+}
+
+.mole.bonus {
+    background-image: url('assets/bonus-mole.png');
+    border: 3px solid gold;
+}
+
+
+@keyframes bonk {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(1.5);
+    }
+}
