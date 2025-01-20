@@ -1,0 +1,305 @@
+:root {
+    --grid-width: 450px;
+    --cell-size: 30px;
+    --game-color: #0d1f0a;
+    --bg-color: #000;
+    --shooter-color: #fff;
+    --invader-color: #ff0080;
+    --laser-color: #00ffff69;
+    --explosion-color: #900606;
+}
+
+body {
+    background: var(--bg-color);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    color: var(--game-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(0, 255, 0, 0.05);
+    padding: 20px;
+    border: 2px solid var(--game-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+.grid {
+    width: var(--grid-width);
+    height: var(--grid-width);
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 2px;
+    background: rgba(57, 255, 20, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+.shooter {
+    background-color: var(--shooter-color);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+.invader {
+    background-color: var(--invader-color);
+    border-radius: 4px;
+    animation: invaderPulse 0.5s infinite alternate;
+}
+
+.laser {
+    background-color: var(--laser-color);
+    animation: laserPulse 0.2s infinite;
+}
+
+.boom {
+    animation: explosion 0.3s forwards;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes invaderPulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes laserPulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes explosion {
+    0% {
+        transform: scale(1);
+        background-color: var(--explosion-color);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        background-color: transparent;
+        opacity: 0;
+    }
+}
+
+.score-board {
+    font-size: 24px;
+    margin: 20px 0;
+    text-shadow: 0 0 10px var(--game-color);
+}
+
+.controls {
+    margin: 20px 0;
+    padding: 10px;
+    background: rgba(57, 255, 20, 0.1);
+    border-radius: 5px;
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.game-over.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button {
+    background: var(--game-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--game-color);
+}:root {
+    --grid-width: 450px;
+    --cell-size: 30px;
+    --game-color: #39ff14;
+    --bg-color: #000;
+    --shooter-color: #fff;
+    --invader-color: #ff0080;
+    --laser-color: #00ffff;
+    --explosion-color: #ff4400;
+}
+
+body {
+    background: var(--bg-color);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    color: var(--game-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(0, 255, 0, 0.05);
+    padding: 20px;
+    border: 2px solid var(--game-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+.grid {
+    width: var(--grid-width);
+    height: var(--grid-width);
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 2px;
+    background: rgba(57, 255, 20, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 4px;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+.shooter {
+    background-color: var(--shooter-color);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+.invader {
+    background-color: var(--invader-color);
+    border-radius: 4px;
+    animation: invaderPulse 0.5s infinite alternate;
+}
+
+.laser {
+    background-color: var(--laser-color);
+    animation: laserPulse 0.2s infinite;
+}
+
+.boom {
+    animation: explosion 0.3s forwards;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes invaderPulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes laserPulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes explosion {
+    0% {
+        transform: scale(1);
+        background-color: var(--explosion-color);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        background-color: transparent;
+        opacity: 0;
+    }
+}
+
+.score-board {
+    font-size: 24px;
+    margin: 20px 0;
+    text-shadow: 0 0 10px var(--game-color);
+}
+
+.controls {
+    margin: 20px 0;
+    padding: 10px;
+    background: rgba(57, 255, 20, 0.1);
+    border-radius: 5px;
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.game-over.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button {
+    background: var(--game-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--game-color);
+}

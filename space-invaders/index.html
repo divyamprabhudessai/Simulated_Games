@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Space Invaders</h1>
+        <div class="score-board">Score: <span id="result">0</span></div>
+        <div class="grid"></div>
+        <div class="controls">
+            ← → to move | ↑ to shoot
+        </div>
+        <button id="start-button">Start Game</button>
+        <div class="game-over">
+            <h2>Game Over</h2>
+            <p>Final Score: <span class="final-score">0</span></p>
+            <button onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
