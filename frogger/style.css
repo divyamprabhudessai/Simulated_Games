@@ -1,0 +1,150 @@
+:root {
+    --grid-size: 450px;
+    --cell-size: calc(var(--grid-size) / 9);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #470202;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+    background: #15ca36;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-info {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.game-info h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#start-pause-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#start-pause-button:hover {
+    background: #45a049;
+}
+
+.grid {
+    width: var(--grid-size);
+    height: var(--grid-size);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 1px;
+    background: #333;
+    border: 2px solid #444;
+    border-radius: 5px;
+}
+
+.grid > div {
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
+/* Environment Styling */
+.ending-block {
+    background: #ff4444;
+}
+
+.end-zone {
+    background: #aa2222;
+}
+
+.log-zone {
+    background: #4477ff;
+}
+
+.safe-zone {
+    background: #44aa44;
+}
+
+.road {
+    background: #666666;
+}
+
+.starting-block {
+    background: #4444ff;
+}
+
+.start-zone {
+    background: #2222aa;
+}
+
+/* Game Elements */
+.frog {
+    background: #44ff44 !important;
+    border-radius: 50%;
+    position: relative;
+}
+
+.frog::after {
+    content: '🐸';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+.car {
+    background: #ff7777 !important;
+    border-radius: 4px;
+}
+
+.log {
+    background: #8b4513 !important;
+    border-radius: 4px;
+}
+
+/* Animation Classes */
+.moving-left {
+    animation: moveLeft 1s linear infinite;
+}
+
+.moving-right {
+    animation: moveRight 1s linear infinite;
+}
+
+@keyframes moveLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes moveRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}

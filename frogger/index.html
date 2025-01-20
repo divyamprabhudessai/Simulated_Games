@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frogger Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <h1>🐸 Frogger</h1>
+            <div class="stats">
+                <div class="timer">Time: <span id="time-left">20</span></div>
+                <button id="start-pause-button">Start / Pause</button>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <!-- Row 1: End Zone -->
+            <div class="ending-block"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            <div class="end-zone"></div>
+            
+            <!-- Rows 2-4: River with Logs -->
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            <div class="log-zone l1"></div>
+            
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            <div class="log-zone l2"></div>
+            
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            <div class="log-zone l3"></div>
+            
+            <!-- Row 5: Safe Zone -->
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            <div class="safe-zone"></div>
+            
+            <!-- Rows 6-8: Road with Cars -->
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            <div class="road c1"></div>
+            
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            <div class="road c2"></div>
+            
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            <div class="road c3"></div>
+            
+            <!-- Row 9: Starting Zone -->
+            <div class="starting-block"></div>
+            <div class="start-zone"></div>
+            <div class="start-zone"></div>
+            <div class="start-zone"></div>
+            <div class="start-zone frog"></div>
+            <div class="start-zone"></div>
+            <div class="start-zone"></div>
+            <div class="start-zone"></div>
+            <div class="start-zone"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
